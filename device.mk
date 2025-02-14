@@ -247,6 +247,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom.ramdisk \
     fstab.zram \
     init.qcom.power.rc \
+    init.xiaomi.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
