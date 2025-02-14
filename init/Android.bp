@@ -26,12 +26,6 @@ sh_binary {
     vendor: true,
 }
 
-sh_binary {
-    name: "init.qcom.post_boot.sh",
-    src: "init.qcom.post_boot.sh",
-    vendor: true,
-}
-
 // Init configuration files
 prebuilt_etc {
     name: "fstab.qcom",
@@ -78,5 +72,12 @@ prebuilt_etc {
     name: "ueventd.qcom.rc",
     filename: "ueventd.rc",
     src: "ueventd.qcom.rc",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.xiaomi.rc",
+    src: "init.xiaomi.rc",
+    sub_dir: "init/hw",
     vendor: true,
 }
