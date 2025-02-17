@@ -790,6 +790,11 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     socket audio_hw_socket seqpacket 0666 system system
     onrestart restart audioserver
 
+on property:vendor.post_boot.parsed=1
+# Set restricted cpuset to the same CPUs as system-background
+    copy /dev/cpuset/system-background/cpus /dev/cpuset/restricted/cpus
+
+
 on property:ro.boot.hwversion=*
     setprop vendor.boot.hwversion ${ro.boot.hwversion}
 
