@@ -141,6 +141,17 @@ on init
     chown system system /dev/cpuset/camera-daemon-dedicated/tasks
     chmod 0664 /dev/cpuset/camera-daemon-dedicated/tasks
 
+    # Uclamp settings
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
+
+    # Migrate tasks again in case kernel threads are created during boot
+on property:sys.boot_completed=1
+    copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
+
+    write /dev/cpuctl/background/cpu.uclamp.max 50
+    write /dev/cpuctl/system-background/cpu.uclamp.max 50
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max 60
+
     # Setup cpu.shares to throttle background groups (bg ~ 5% sysbg ~ 5% dex2oat ~2.5%)
     write /dev/cpuctl/background/cpu.shares 1024
     write /dev/cpuctl/system-background/cpu.shares 1024
