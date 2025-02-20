@@ -193,6 +193,9 @@ drm.service.enabled=true
 # DPM
 persist.vendor.dpmhalservice.enable=1
 
+# Fingerprint
+persist.vendor.fingerprint.type=rear
+
 # Graphics
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
