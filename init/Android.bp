@@ -28,13 +28,6 @@ sh_binary {
 
 // Init configuration files
 prebuilt_etc {
-    name: "fstab.qcom",
-    src: "fstab.qcom",
-    vendor: true,
-    ramdisk_available: true,
-}
-
-prebuilt_etc {
     name: "fstab.zram",
     src: "fstab.zram",
     vendor: true,
