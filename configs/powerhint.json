@@ -235,6 +235,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "Dex2oatUClampMaxBoost",
+      "Path": "/dev/cpuctl/dex2oat/cpu.uclamp.max",
+      "Values": [
+        "40.00",
+        "60.50"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "PMQoSCpuDmaLatency",
       "Path": "/dev/cpu_dma_latency",
       "Values": [
@@ -288,6 +298,12 @@
       "Node": "PowerHALMainState",
       "Duration": 0,
       "Value": "SUSTAINED_PERFORMANCE"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "Dex2oatUClampMaxBoost",
+      "Duration": 3000,
+      "Value": "60.50"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
